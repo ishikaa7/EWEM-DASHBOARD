@@ -1,6 +1,6 @@
-﻿# EWEM Portfolio Dashboard
+# EWEM Portfolio Dashboard — Ishika Bhute
 
-A static, responsive coursework portfolio for **Environmental Waste and E-waste Management (EWEM)**.
+A static, responsive coursework portfolio for **Environmental Waste and E-waste Management (EWEM)** by **Ishika Bhute (24102C0025, TE CMPN C)**.
 It presents ISA and ESE activities, projects/research, and a searchable file browser that links to the
 actual submission files stored in the `Assignments/` directory.
 
@@ -33,8 +33,11 @@ EWEM/                         (repository root = published site root)
 │   ├── Assignment 1_ E waste Tracker/
 │   ├── Assignment 2/
 │   ├── Assignment 3/
+│   ├── Campaign For E Waste in Campus_Class Activity/
+│   ├── Carbon Footprint/
 │   ├── Case Studies E waste/
 │   ├── E waste India Vs World Data/
+│   ├── EwasteRecovery Process_Modification for Design Patent/
 │   ├── IEEE Paper Submission/
 │   ├── Indian Companies Following E waste Rules_Comparative Study/
 │   ├── LEED Certification of Green Buildings in India/
@@ -142,15 +145,12 @@ You can also verify locally before pushing by running the static server and clic
 
 ## Intentionally missing / not-yet-linked items
 
-These activities are **listed in the course brief** but no matching submission file was found in
-`Assignments/`, so they render with a **"Not yet linked"** state. Add a manifest entry once the file exists:
+This activity is **listed in the course brief** but no matching submission file was required or found in
+`Assignments/`, so it renders with a **"Not yet linked"** state:
 
-- **ISA — Assignment Zero: Check AAP**
-- **ESE — Carbon Footprint Task (Excel Activity)**
-- **ESE — E-waste Recovery Process: Modification for Design Patent**
-- **ESE — Campaign for E-waste in Campus (Class Activity)**
+- **ISA — Assignment Zero: Check AAP** (Introductory review activity)
 
-No placeholder links, fabricated statistics, or invented content are used anywhere in the site.
+All other 12 ISA and ESE activities have their verified submission files linked directly to the `Assignments/` directory.
 
 ---
 

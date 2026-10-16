@@ -30,10 +30,13 @@
     "external-link": '<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/>',
     alert: '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
     chevron: '<path d="m6 9 6 6 6-6"/>',
-    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/><path d="m13.5 8.5-5 5M8.5 8.5l5 5"/>'
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/><path d="m13.5 8.5-5 5M8.5 8.5l5 5"/>',
+    scroll: '<path d="M19 17V5a2 2 0 0 0-2-2H4"/><path d="M8 21h11a2 2 0 0 0 2-2v-2H6a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h2"/><path d="M15 7H9M15 11H9"/>',
+    tracker: '<circle cx="12" cy="12" r="10"/><path d="m16.2 7.8-2 6.3-6.4 2 2-6.3z"/>',
+    book: '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/>'
   };
 
-  var FILE_ICON = { pdf: "file-text", docx: "file-text", xlsx: "file-spreadsheet", pptx: "presentation", png: "image" };
+  var FILE_ICON = { pdf: "file-text", docx: "file-text", xlsx: "file-spreadsheet", pptx: "presentation", png: "image", jpg: "image", jpeg: "image" };
 
   /* ----------------------------------------------------------------------
      Small helpers
@@ -335,7 +338,13 @@
 
     var list = state.resources.filter(function (f) {
       if (cat !== "all" && f.category !== cat) return false;
-      if (type !== "all" && f.ext !== type) return false;
+      if (type !== "all") {
+        if (type === "image") {
+          if (f.ext !== "png" && f.ext !== "jpg" && f.ext !== "jpeg") return false;
+        } else if (f.ext !== type) {
+          return false;
+        }
+      }
       if (q) {
         var hay = (f.title + " " + f.filename).toLowerCase();
         if (hay.indexOf(q) === -1) return false;

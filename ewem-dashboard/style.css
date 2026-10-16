@@ -207,6 +207,7 @@ a:hover { color: var(--primary-strong); }
   white-space: nowrap;
 }
 .brand:hover { color: var(--text); }
+.brand:hover .brand-author { color: var(--primary); }
 .brand-mark {
   display: grid;
   place-items: center;
@@ -217,8 +218,16 @@ a:hover { color: var(--primary-strong); }
   box-shadow: var(--shadow-sm);
 }
 .brand-mark svg { width: 21px; height: 21px; }
-.brand-name { font-size: 1.06rem; }
+.brand-text { display: flex; flex-direction: column; }
+.brand-name { font-size: 1.05rem; line-height: 1.15; }
 .brand-name span { color: var(--text-muted); font-weight: 500; }
+.brand-author {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 550;
+  letter-spacing: 0.02em;
+  transition: color 0.18s var(--ease);
+}
 
 .nav { margin-left: auto; }
 .nav-list {
@@ -373,7 +382,35 @@ a:hover { color: var(--primary-strong); }
   max-width: 46ch;
   color: var(--text-muted);
   font-size: clamp(1.02rem, 1.5vw, 1.14rem);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.25rem;
+}
+
+.student-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.6rem;
+}
+.student-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 0.84rem;
+  color: var(--text);
+  transition: border-color 0.18s var(--ease), background 0.18s var(--ease), transform 0.18s var(--ease);
+}
+.student-badge:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+  transform: translateY(-1px);
+}
+.student-badge strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
